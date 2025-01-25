@@ -18,11 +18,10 @@ module.exports = (io) => {
     });
 
     socket.on("completeTask", (taskId) => {
-      tasks.map(
-        (task) => (task.id = taskId ? { ...task, isCompleted: true } : task)
+      tasks = tasks.map((task) =>
+        task.id === taskId ? { ...task, isCompleted: true } : task
       );
       const updatedTask = tasks.find((task) => task.id === taskId);
-
       io.emit("taskUpdated", updatedTask);
     });
 
