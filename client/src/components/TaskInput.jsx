@@ -11,14 +11,22 @@ const TaskInput = ({ onAddTask }) => {
       setNewTask("");
     }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="flex gap-2 mb-4" onSubmit={handleSubmit}>
       <input
-        placeholder="Enter task"
+        type="text"
+        className="flex-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+        placeholder="Enter a task"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button type="submit">Add task</button>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Add
+      </button>
     </form>
   );
 };

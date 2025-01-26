@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const TaskList = ({ tasks, onComplete, onDelete }) => {
   return (
-    <ul>
+    <ul className="space-y-2">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}

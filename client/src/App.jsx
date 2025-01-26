@@ -46,14 +46,18 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Task App</h1>
-      <TaskInput onAddTask={handleAddTask} />
-      <TaskList
-        tasks={tasks}
-        onComplete={handleCompleteTask}
-        onDelete={handleDeleteTask}
-      />
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="bg-white shadow-md rounded-lg w-full max-w-md p-6">
+        <h1 className="text-2xl font-semibold text-center mb-6">Task App</h1>
+
+        <TaskInput onAddTask={handleAddTask} />
+
+        <TaskList
+          tasks={tasks}
+          onComplete={handleCompleteTask}
+          onDelete={handleDeleteTask}
+        />
+      </div>
     </div>
   );
 };
