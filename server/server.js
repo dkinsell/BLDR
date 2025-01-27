@@ -11,13 +11,15 @@ app.use(express.json());
 
 const httpServer = http.createServer(app);
 
+// Setup Socket.IO with CORS support for the client
 const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
   },
 });
 
+// Attach Socket.IO handlers
 socketHandlers(io);
 
 const PORT = 4000;

@@ -7,24 +7,29 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
+    // Listen for the initial list of tasks from the server
     socket.on("initTasks", (initialTasks) => {
       setTasks(initialTasks);
     });
 
+    // Listen for new tasks being added
     socket.on("taskAdded", (newTask) => {
       setTasks((prevTasks) => [...prevTasks, newTask]);
     });
 
+    // Listen for task updates
     socket.on("taskUpdated", (updatedTask) => {
       setTasks((prevTasks) =>
         prevTasks.map((t) => (t.id === updatedTask.id ? updatedTask : t))
       );
     });
 
+    // Listen for tasks being deleted
     socket.on("taskDeleted", (taskId) => {
       setTasks((prevTasks) => prevTasks.filter((t) => t.id !== taskId));
     });
 
+    // Cleanup event listeners when the component unmounts
     return () => {
       socket.off("initTasks");
       socket.off("taskAdded");

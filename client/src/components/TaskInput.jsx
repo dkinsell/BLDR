@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 const TaskInput = ({ onAddTask }) => {
   const [newTask, setNewTask] = useState("");
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newTask.trim()) {
-      onAddTask(newTask);
+      onAddTask(newTask); // Emit the task to the parent component
       setNewTask("");
     }
   };
