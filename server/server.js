@@ -14,8 +14,9 @@ const httpServer = http.createServer(app);
 // Setup Socket.IO with CORS support for the client
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://bldr-eight.vercel.app"],
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
