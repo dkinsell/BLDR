@@ -1,5 +1,3 @@
-# BLDR
-
 # Real-Time Task Collaboration App
 
 This is a simple **React + Socket.IO** application that allows multiple users to manage a shared task list in real time. Any changes (adding, completing, or deleting tasks) are instantly broadcast to all connected clients—no need to refresh the page.
@@ -13,8 +11,6 @@ This is a simple **React + Socket.IO** application that allows multiple users to
 3. [Getting Started](#getting-started)
    - [Installation](#installation)
    - [Running the Server and Client](#running-the-server-and-client)
-4. [Testing the App](#testing-the-app)
-5. [Future Improvements](#future-improvements)
 
 ---
 
