@@ -11,6 +11,7 @@ This is a simple **React + Socket.IO** application that allows multiple users to
 3. [Getting Started](#getting-started)
    - [Installation](#installation)
    - [Running the Server and Client](#running-the-server-and-client)
+4. [Deployment](#deployment)
 
 ---
 
@@ -78,3 +79,24 @@ This is a simple **React + Socket.IO** application that allows multiple users to
    npm run dev
    ```
 3. Open http://localhost:5173 in your browser to access the app.
+
+## Deployment
+
+### Frontend
+
+The frontend of the application is deployed on **Vercel** and can be accessed at:  
+[https://bldr-eight.vercel.app](https://bldr-eight.vercel.app)
+
+### Backend
+
+The backend is deployed on **Render** at:  
+[https://bldr.onrender.com](https://bldr.onrender.com)
+
+### Note About Backend Inactivity
+
+The backend is hosted on Render’s free tier, which goes into a "sleep" state after 15 minutes of inactivity. When this happens:
+
+- The first request to the backend will take up to **50 seconds** to process due to a "cold start."
+- After the backend "wakes up," subsequent requests will perform normally.
+
+If you experience a delay when interacting with the app for the first time, this is expected behavior.
